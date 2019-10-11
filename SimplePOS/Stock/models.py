@@ -20,8 +20,14 @@ class Marca(models.Model):
 
 class Unmedida(models.Model):
     medida = models.CharField(max_length=30,blank=False,null=False)
-    def __str__(self):
-        return self.medida
+
+    class Meta:
+        ordering = ["medida"]
+        verbose_name_plural = "Unidades de Medida"
+        verbose_name = "Unidad de Medida"
+
+        def __str__(self):
+            return self.medida
 
 class Formato(models.Model):
     formato = models.CharField(max_length=50,blank=False,null=False)
